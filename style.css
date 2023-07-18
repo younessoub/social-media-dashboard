@@ -11,12 +11,12 @@
 
     /* #### Dark Theme */
 
-    --Toggle: linear gradient hsl(210, 78%, 56%);
-    /* to hsl(146, 68%, 55%); */
+    /* --Toggle: linear gradient hsl(210, 78%, 56%); */
+    /* to :hsl(146, 68%, 55%); */
 
     /* #### Light Theme */
 
-    --Toggle: hsl(230, 22%, 74%);
+    --CardBgToggle: hsl(230, 22%, 74%);
 
     /* ### Neutral */
 
@@ -24,7 +24,7 @@
 
     --VeryDarkBlue: hsl(230, 17%, 14%);
     /*(BG);*/
-    --VeryDarkBlue: hsl(232, 19%, 15%);
+    --VeryDarkBlueTop: hsl(232, 19%, 15%);
     /*(Top BG Pattern);*/
     --DarkDesaturatedBlue: hsl(228, 28%, 20%);
     /* (Card BG);*/
@@ -47,9 +47,312 @@
     /*(Text)*/
 }
 
+/* utility classes start */
+
+.color-white {
+    color: var(--White);
+}
+
+.color-DesaturatedBlue {
+    color: var(--DesaturatedBlue);
+}
+
+.background-DarkDesaturatedBlue {
+    background-color: var(--DarkDesaturatedBlue);
+}
+
+.background-VeryDarkBlueTop {
+    background-color: var(--VeryDarkBlueTop);
+}
+
+.background-VeryDarkBlue {
+    background-color: var(--VeryDarkBlue);
+}
+
+.img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.bright-red {
+    color: var(--BrightRed);
+}
+
+.lime-green {
+    color: var(--LimeGreen);
+}
+
+/* utility classes end */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+}
+
+
+
+body {
+    background-color: var(--White);
+    position: relative;
+}
+
+.top-background {
+    background-color: var(--VeryPaleBlue);
+    height: 20vh;
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* switch css start */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--LimeGreen);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--LimeGreen);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(26px);
+    transform: translateX(34px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* switch css end */
+
+.title {
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: var(--VeryDarkBlue);
+}
+
+.total {
+    color: var(--DarkGrayishBlue)
+}
+
+.switch-wrap {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--DarkGrayishBlue);
+}
+
+.followers-cards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.followers-card {
+    background-color: var(--LightGrayishBlue);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.followers-card:hover {
+    background-color: var(--CardBgToggle);
+}
+
+.followers-card::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background-color: var(--Facebook);
+}
+
+.followers-card.twitter::before {
+    background-color: var(--Twitter);
+}
+
+.followers-card.instagram::before {
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.followers-card.youtube::before {
+    background-color: var(--YouTube);
+}
+
+.followers-card .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.followers-card .header p {
+    color: var(--DarkGrayishBlue);
+}
+
+.stat-wrap h2 {
+    color: var(--VeryDarkBlue);
+    font-size: 40px;
+}
+
+.stat-wrap p {
+    color: var(--DarkGrayishBlue);
+    font-size: 14px;
+    letter-spacing: 5px;
+}
+
+.today-stat-wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.today-stat-wrap p {
+    color: var(--LimeGreen);
+}
+
+.today-stat-wrap p.red {
+    color: var(--BrightRed);
+}
+
+
+.overview {
+    margin-top: 30px;
+}
+
+.overview h3 {
+    color: var(--DarkGrayishBlue);
+}
+
+.overview-cards {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.overview-cards .card {
+    background-color: var(--LightGrayishBlue);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.overview-cards .card:hover {
+    background-color: var(--CardBgToggle);
+}
+
+.overview-cards .header,
+.overview-cards .stat-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview-cards .header {
+    color: var(--DarkGrayishBlue);
+}
+
+.overview-cards .stat-wrap h4 {
+    color: var(--VeryDarkBlue);
+    font-size: 30px;
+}
+
+.stat-flex {
+    display: flex;
+    align-items: center;
+}
+
+.attribution {
+    margin: 30px 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:800px) {
+    main {
+        padding: 60px;
+    }
+
+    .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .app-header hr {
+        display: none;
+    }
+
+    .switch-wrap {
+        gap: 20px;
+    }
 }
