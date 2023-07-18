@@ -50,23 +50,23 @@
 /* utility classes start */
 
 .color-white {
-    color: var(--White);
+    color: var(--White) !important;
 }
 
 .color-DesaturatedBlue {
-    color: var(--DesaturatedBlue);
+    color: var(--DesaturatedBlue)  !important;
 }
 
 .background-DarkDesaturatedBlue {
-    background-color: var(--DarkDesaturatedBlue);
+    background-color: var(--DarkDesaturatedBlue)  !important;
 }
 
 .background-VeryDarkBlueTop {
-    background-color: var(--VeryDarkBlueTop);
+    background-color: var(--VeryDarkBlueTop)  !important;
 }
 
 .background-VeryDarkBlue {
-    background-color: var(--VeryDarkBlue);
+    background-color: var(--VeryDarkBlue)  !important;
 }
 
 .img-div {
