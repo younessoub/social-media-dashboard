@@ -1,4 +1,3 @@
-
 const darkWhite = document.querySelectorAll('.dark-white');
 const darkDesaturatedBlue = document.querySelectorAll('.dark-DarkDesaturatedBlue');
 const darkDarkDesaturatedBlue = document.querySelectorAll('.dark-DarkDesaturatedBlue');
@@ -8,7 +7,7 @@ const darkVeryDarkBlue = document.querySelectorAll('.dark-VeryDarkBlue');
 const darkModeToggle = document.querySelector('.slider')
 
 
-darkModeToggle.addEventListener('click', ()=>{
+darkModeToggle.addEventListener('click', () => {
   toggleDarkMode()
 })
 
